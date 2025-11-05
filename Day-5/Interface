@@ -1,0 +1,56 @@
+package com.Day5.Abstraction;
+
+interface Payable {
+    void generatePayslip();
+}
+
+interface Bonus {
+    void calculateBonus();
+}
+
+class Contractor implements Payable, Bonus {
+
+    private double dailyRate = 2500;  // per day
+    private int workingDays = 20;
+
+    @Override
+    public void generatePayslip() {
+        double totalSalary = dailyRate * workingDays;
+        System.out.println("Contractor salary (daily basis): ₹" + totalSalary);
+    }
+
+    @Override
+    public void calculateBonus() {
+        System.out.println("Contractors are not eligible for annual bonus.");
+    }
+}
+
+class FullTimeEmployee implements Payable, Bonus {
+
+    private double monthlySalary = 60000;
+
+    @Override
+    public void generatePayslip() {
+        System.out.println("Full-time employee monthly salary: ₹" + monthlySalary);
+    }
+
+    @Override
+    public void calculateBonus() {
+        double bonus = monthlySalary * 0.10; // 10% bonus
+        System.out.println("Full-time employee bonus: ₹" + bonus);
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        System.out.println("---- Contractor Details ----");
+        Contractor contractor = new Contractor();
+        contractor.generatePayslip();
+        contractor.calculateBonus();
+
+        System.out.println("\n---- Full-Time Employee Details ----");
+        FullTimeEmployee fte = new FullTimeEmployee();
+        fte.generatePayslip();
+        fte.calculateBonus();
+    }
+}
