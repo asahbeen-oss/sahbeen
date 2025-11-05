@@ -1,0 +1,46 @@
+package com.Day4.Inheritance;
+
+class GrandFather {
+    public void land() {
+        System.out.println("Owns 15 acres of agricultural land");
+    }
+}
+
+class Father extends GrandFather {
+    public void house() {
+        System.out.println("Owns a 3BHK villa");
+    }
+}
+
+class Son extends Father {
+    public void car() {
+        System.out.println("Owns an electric SUV");
+    }
+}
+
+class Daughter extends Father {
+    public void jewels() {
+        System.out.println("Has gold and diamond jewelry");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        System.out.println("---- Son's Properties ----");
+        Son son = new Son();
+        son.car();
+        son.house();
+        son.land(); // inherited from GrandFather
+
+        System.out.println("\n---- Daughter's Properties ----");
+        Daughter daughter = new Daughter();
+        daughter.jewels();
+        daughter.house();
+        daughter.land(); // inherited from GrandFather
+
+        System.out.println("\n---- Father's Properties ----");
+        Father father = new Father();
+        father.house();
+        father.land();
+    }
+}
