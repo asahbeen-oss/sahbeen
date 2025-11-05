@@ -1,0 +1,44 @@
+package com.Day3;
+
+public class MathUtility {
+    public static void main(String[] args) {
+        MathUtility obj = new MathUtility();
+
+        obj.add();                 // No return, no arguments
+        sub(50, 30);               // No return, with arguments
+        System.out.println(mul()); // Return, no arguments
+        System.out.println(div(15, 4)); // Return, with arguments
+    }
+
+    // No return type, without arguments
+    public void add() {
+        int num1 = 25;
+        int num2 = 35;
+        int sum = num1 + num2;
+        System.out.println("Addition: " + sum);
+    }
+
+    // No return type, with arguments
+    public static void sub(int num1, int num2) {
+        int result = Math.abs(num1 - num2);
+        System.out.println("Subtraction: " + result);
+    }
+
+    // Return type without arguments
+    public static double mul() {
+        int num1 = 8;
+        int num2 = 12;
+        double result = num1 * num2;
+        return result;
+    }
+
+    // Return type with arguments
+    public static double div(int num1, int num2) {
+        if (num2 == 0) {
+            System.out.println("Error: Division by zero");
+            return 0;
+        }
+        double result = (double) num1 / num2;
+        return result;
+    }
+}
