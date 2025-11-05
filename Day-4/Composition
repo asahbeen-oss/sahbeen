@@ -1,0 +1,36 @@
+package com.Day4.Inheritance;
+
+class Engine {
+    void start() {
+        System.out.println("🔑 Engine Started");
+    }
+
+    void stop() {
+        System.out.println("🛑 Engine Stopped");
+    }
+}
+
+class Car {
+    // Composition: Car has an Engine
+    Engine engine = new Engine();
+
+    void startCar() {
+        System.out.println("Attempting to start the car...");
+        engine.start();
+        System.out.println("🚗 Car is now running");
+    }
+
+    void stopCar() {
+        engine.stop();
+        System.out.println("🚘 Car has stopped");
+    }
+}
+
+public class Composition {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.startCar();
+        System.out.println("----------------------");
+        car.stopCar();
+    }
+}
