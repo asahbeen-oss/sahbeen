@@ -1,0 +1,59 @@
+package com.Day4.Encapsulation;
+
+class Student {
+    private int rno;
+    private String name;
+    private int marks;
+
+    // Setters
+    public void setRno(int rno) {
+        if (rno > 0) {
+            this.rno = rno;
+        } else {
+            System.out.println("Invalid Roll Number!");
+        }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMarks(int marks) {
+        if (marks >= 0 && marks <= 100) {
+            this.marks = marks;
+        } else {
+            System.out.println("Marks must be between 0 and 100!");
+        }
+    }
+
+    // Getters
+    public int getRno() {
+        return rno;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    // Display method
+    public void display() {
+        System.out.println("Roll No: " + rno);
+        System.out.println("Name: " + name);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+public class EncapsulationDemo {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setRno(201);
+        s1.setName("Omar");
+        s1.setMarks(92);
+
+        s1.display();
+    }
+}
