@@ -1,0 +1,45 @@
+package com.Day5.Abstraction;
+
+abstract class Shape {
+    String color;
+
+    // Abstract method (must be implemented by subclasses)
+    abstract void draw();
+
+    // Concrete method (shared by all shapes)
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void showColor() {
+        System.out.println("Color: " + color);
+    }
+}
+
+class Rectangle extends Shape {
+    void draw() {
+        System.out.println("🟥 Drawing a Rectangle...");
+    }
+}
+
+class Square extends Shape {
+    void draw() {
+        System.out.println("🟩 Drawing a Square...");
+    }
+}
+
+public class AbstractionDemo {
+    public static void main(String[] args) {
+        Shape rectangle = new Rectangle();
+        rectangle.setColor("Red");
+        rectangle.draw();
+        rectangle.showColor();
+
+        System.out.println("----------------------");
+
+        Shape square = new Square();
+        square.setColor("Green");
+        square.draw();
+        square.showColor();
+    }
+}
